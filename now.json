@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "services/web/static/*", "use": "@now/static" },
+      { "src": "services/i18n/locales/*", "use": "@now/static" }
+    ],
+    "routes": [
+      { "src": "/static/(.*)", "dest": "/services/web/static/$1" },
+      { "src": "/locales/(.*)", "dest": "/services/i18n/locales/$1" }
+    ]
+}
